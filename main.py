@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List
 from dummy_data import database_risiko
@@ -7,6 +8,15 @@ app = FastAPI(
     title="API Manajemen Risiko",
     description="api buat ngelola dan nilai risiko perusahaan",
     version="1.0.0"
+)
+
+# konfigurasi cors biar api bisa ditembak dari frontend domain manapun
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # model pydantic buat nentuin struktur balikan data dan request
