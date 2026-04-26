@@ -140,7 +140,7 @@ def hapus_risiko(id_risiko: int):
             return {"status": "sukses ngapus data", "data_terhapus": data_hapus}
     raise HTTPException(status_code=404, detail="id risiko yang mau dihapus ngga ketemu")
 
-    @app.get("/")
+@app.get("/")
 def halaman_utama():
     # nampilin buku menu daftar endpoint api
     return {
