@@ -6,7 +6,21 @@ from dummy_data import database_risiko
 
 app = FastAPI(
     title="API Manajemen Risiko",
-    description="api buat ngelola dan nilai risiko perusahaan",
+    description="""
+**API Manajemen Risiko Tata Kelola Perusahaan**
+
+Menyediakan fungsionalitas komprehensif untuk mengelola siklus hidup risiko organisasi. Panduan singkat rute yang tersedia:
+
+* **GET /risks** - Mengambil seluruh data risiko yang terdaftar.
+* **GET /risks/critical** - Mencari daftar risiko dengan status tinggi atau kritis.
+* **POST /risks** - Menambahkan data risiko baru ke dalam sistem.
+* **POST /risks/assess/{id}** - Melakukan penilaian skor (probabilitas & dampak) suatu risiko.
+* **PUT /risks/{id}/mitigate** - Memperbarui status risiko menjadi telah dimitigasi.
+* **DELETE /risks/{id}** - Menghapus data risiko beserta riwayatnya.
+
+---
+*Dikembangkan oleh:* **Muhammad Dzaky Wiratama (124230024)**
+""",
     version="1.0.0"
 )
 
